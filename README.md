@@ -1,4 +1,4 @@
-# Reto JavaScript30
+# JavaScript30
 [https://pacho89.github.io/](https://pacho89.github.io/)
 
 ## Lider
