@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Panels Image Gallery</title>
+    <link href='https://font..googleapis.com/css?family=Amatic+SC' ref='stylesheet' type='text/css'>
+</head>
+<body>
+    
+    <style>
+        html {
+            box-sizing: border-box;
+            background: #ffc600;
+            font-family: 'helvetica neve';
+            font-size: 10px;
+            font-weight: 100;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .panels {
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .panel {
+            background: #680f9c;
+            box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            align-items: center;
+            transition:
+            font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+            flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+            background 0.2s;
+            font-size: 20px;
+            background-size: cover;
+            background-position: center;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel1 { background-image:url(https://miro.medium.com/max/2560/1*A4Z-Zpw7NBbnt94voCIqXA.jpeg); }
+        .panel2 { background-image:url(https://heraldodemexico.com.mx/cdn-cgi/image/width=1200,fit=contain/https://cdn.heraldodemexico.com.mx/wp-content/uploads/2019/10/02081423/Saint-Seiya-Netflix-serie-octubre-2.jpg); }
+        .panel3 { background-image:url(https://static.vix.com/es/sites/default/files/styles/4x3/public/p/portada-dragonball-z.jpg); }
+        .panel4 { background-image:url(https://www.cinemascomics.com/wp-content/uploads/2017/07/one-piece-accion-real.jpg?width=1200&enable=upscale); }
+        .panel5 { background-image:url(https://gogocatrina.com/wp-content/uploads/2019/08/JoJo-Cover-.jpg); }
+
+        /*flex children items*/
+        .panel > *{
+            margin: 0;
+            width: 100%;
+            transition: transform 0.5s;
+            /*border: 1px solid red;*/
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .panel > *:first-child {
+            transform: translateY(-100%);
+        }
+        .panel.open-active > *:first-child {
+            transform: translateY(0);
+        }
+        .panel > *:last-child {
+            transform: translateY(100%);
+        }
+        .panel.open-active > *:last-child {
+            transform: translateY(0);
+        }
+
+        .panel p {
+            text-transform: uppercase;
+            font-family: 'Amatic SC', cursive;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+            font-size: 2em; 
+        }
+
+        .panel img {
+            text-transform: uppercase;
+            font-family: 'Amatic SC', cursive;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+            font-size: 2em; 
+        }
+
+        .panel p:nth-child(2){
+            flex: 5;
+            font-size: 4em;
+        }
+
+        .panel.open {
+            flex: 5; /*Si quitas este tienes una animación chevere*/
+            font-size: 40px;
+        }
+
+        .cita {
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+
+    <div class="panels">
+    <div class="panel panel1">
+      <img src="https://i.pinimg.com/originals/71/bd/54/71bd549cf50388d04ff9b0f8b00494fe.jpg">
+      <p>🌀</p>
+      <img src="https://i.pinimg.com/originals/d1/5b/86/d15b86f16bb820021ddca8320e56c446.jpg">
+    </div>
+    <div class="panel panel2">
+      <img src="https://p4.wallpaperbetter.com/wallpaper/649/413/138/anime-saint-seiya-digital-art-fan-art-wallpaper-5910688d819a6d1b0697183f7041a63d.jpg">
+      <p>☄️</p>
+      <img src="https://lh3.googleusercontent.com/proxy/rk-tMyQk4IOMiUmEYhhdUVW2u5IUywZs6Wu47fsCtc2EZhMWns-Nn1FZSCQl-8YNgfSHpxsmp5YpglgjbQoFAKV41uy-i27LESss8t9Ze49Y0lib9eeJZ0N411s2ES_DckNQzA5Z9apNw8YtkOkAP5bPGClx-sSbxyO_9JfqrppsKNlZbZLH9npN_TyejvvO7Ab0fpJ31HYdoMAB3tPvu6Y-">
+    </div>
+    <div class="panel panel3">
+      <img src="https://depor.com/resizer/YGZkuBRip4ituG-NMa4uW340a3o=/1200x800/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/CPOYDD4CSVAPBJTUYB5H5C6OZI.jpg">
+      <p>🐉</p>
+      <img src="https://elcomercio.pe/resizer/Qua2jtud2_AajQEbyMbVSN_YKoI=/980x528/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/XSHHJBMDH5H3RNRMEV353MPMAY.jpg">
+    </div>
+    <div class="panel panel4">
+      <img src="https://i.ytimg.com/vi/rtzP_6BxsFo/maxresdefault.jpg">
+      <br>
+      <p>🏴‍☠️</p>
+      <img src="https://i.ytimg.com/vi/vgQXOw1KQ1M/maxresdefault.jpg">
+    </div>
+    <div class="panel panel5">
+      <img src="https://dw9to29mmj727.cloudfront.net/promo/2016/5340-SeriesHeaders_JoJoGW_2000x800_jpg">
+      <p>The🌎</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSoI9ZOXotoVYITmZYQNIUHZHRCEUvbESzWWbRP9B2fZxHzs86b&usqp=CAU">
+    </div>
+  </div>
+
+  <script>
+      const panels = document.querySelectorAll('.panel');
+
+      function toggleOpen(){
+          //console.log('Hello')
+          this.classList.toggle('open');
+      }
+      
+      function toggleActive(e){
+          console.log(e.propertyName);
+          if(e.propertyName.includes('flex')){
+              this.classList.toggle('open-active');
+          } 
+          this.classList.toggle('open');
+      }
+    
+      panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+      panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
+
+</body>
+</html>
