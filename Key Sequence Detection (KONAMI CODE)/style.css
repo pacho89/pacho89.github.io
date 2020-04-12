@@ -1,0 +1,16 @@
+html,body {
+    background: url(https://1.bp.blogspot.com/-ITpOmLQVycc/UbHro0HHa6I/AAAAAAAAA4I/tPS1gJaURwE/s1600/Sky+Anime+Landscape+08.jpg) bottom center;
+  }
+
+  #clave{
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;
+    background: transparent;
+  }
+
+  #Label1 {
+    color: lightblue;
+    font-size: 20px;
+}
