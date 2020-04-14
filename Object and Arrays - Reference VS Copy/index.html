@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object and Arrays - Reference VS Copy</title>
+</head>
+<body>
+    
+    <script>
+        // comenzar con cadenas y booleanos
+        // let age = 100;
+        // let age2 = age;
+        // console.log(age, age2);
+        // age = 200;
+        // console.log(age, age2);
+
+        // let name = 'Wes';
+        // let name2 = name;
+        // console.log(name, name2);
+        // name = 'wesley';
+        // console.log(name, name2);
+
+        // Digamos que tenemos un arreglo
+        const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+        // y queremos hacer una copia de ello
+        const team = players;
+
+        console.log(players, team);
+        // You might think we can just do something like this:
+        // team[3] = 'Lux';
+
+        // Pero que pasa cuando actualizamos el arreglo?
+
+        // Aqui esta el problema!
+
+        // oh no - tenemos que editar el arreglo original tambien
+
+        // Por que? Es porque esa es la referencia, no una copia del arreglo. Ambos puntos son el mismo arreglo!
+
+        // Entonces, como arreglamos esto?? Hacemos una copia!
+        const team2 = players.slice();
+
+        // un camino
+
+        // O creamos un nueevo arreglo y concatenamos el viejo
+        const team3 = [].concat(players);
+
+        // O usamos el nuevo ES6 Spread
+        const team4 = [...players];
+        team4[3] = 'heeee hawww';
+        console.log(team4);
+
+        const team5 = Array.from(players);
+
+        // ahora que actualizamos, el original no ha cambiado
+
+        // Lo mismo va para los objetos, Digamos que tenemos un objeto persona
+
+        // Con objetos
+        const person = {
+        name: 'Wes Bos',
+        age: 80
+        };
+
+        // y penemos hicimos una copia:
+        // const captain = person;
+        // captain.number = 99;
+
+        // como podemos tomar una copia?
+        const cap2 = Object.assign({}, person, { number: 99, age: 12 });
+        console.log(cap2);
+
+        // Con suerte veremos el objeto pronto ...spread
+        // const cap3 = {...person};
+
+        // Cosas importantes - Esto es solo la profundidad del nivel 1 - Ambos arreglos y objetos. lodash tiene un metodo de copiado profundo, Pero debemos pensarlo dos veces antes de usarlo.
+
+        const wes = {
+        name: 'Wes',
+        age: 100,
+        social: {
+            twitter: '@wesbos',
+            facebook: 'wesbos.developer'
+        }
+        };
+
+        console.clear();
+        console.log(wes);
+
+        const dev = Object.assign({}, wes);
+        //la forma de clonar del pobre jajaja
+        const dev2 = JSON.parse(JSON.stringify(wes));
+
+    </script>
+
+</body>
+</html>
