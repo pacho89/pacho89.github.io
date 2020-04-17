@@ -1,0 +1,11 @@
+html {
+    box-sizing: border-box;
+    background: url(https://previews.123rf.com/images/superkataiiwhite/superkataiiwhite1810/superkataiiwhite181000062/111010774-dirty-wall-with-blood-from-murder-in-abandoned-building-murder-and-halloween-concept-.jpg) center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+  }
