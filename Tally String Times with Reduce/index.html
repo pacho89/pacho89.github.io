@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tally String Times with Reduce</title>
+</head>
+<body>
+
+    <ul>
+        <li data-time="4:06">
+            Este es el primer video
+        </li>
+        <li data-time="5:59">
+            Este es el segundo video
+        </li>
+        <li data-time="5:30">
+            Este es el tercer video
+        </li>
+        <li data-time="50:22">
+            Este es el cuarto video
+        </li>
+    </ul>
+
+    <script>
+        //primero que todo esto no es un array, si quieres convertirlo pueddes usar [...] o
+        const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+        const seconds = timeNodes.map(node => node.dataset.time)
+        .map(timeCode => {
+            const [min, secs] = timeCode.split(':').map(parseFloat); //de una vez lo convertivos en float
+            return (min * 60) + secs;
+            console.log(min, secs);
+        })
+        .reduce((total, vidSeconds) => total + vidSeconds);
+
+        let secondsLeft = seconds;
+        const hours = Math.floor(secondsLeft / 3600);
+        secondsLeft = secondsLeft % 3600;
+
+        const mins = Math.floor(secondsLeft / 60);
+        secondsLeft = secondsLeft % 60;
+
+        console.log(hours, mins, secondsLeft);
+
+
+    </script>
+    
+</body>
+</html>
