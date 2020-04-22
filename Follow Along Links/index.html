@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follow Along Links</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav>
+        <ul class="menu">
+          <li><a href="">Home</a></li>
+          <li><a href="">Order Status</a></li>
+          <li><a href="">Tweets</a></li>
+          <li><a href="">Read Our History</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+      </nav>
+  
+      <div class="wrapper">
+        <p>Black Cat (ブラックキャット Burakku Kyatto) es una serie <a href="">manga y anime</a> escrita por Kentaro Yabuki (Conocido también por ser cocreador de <a href="">To Love-Ru</a>) y publicada por la revista <a href="">Shōnen Jump.</a></p>
+        <p>La serie fue licenciada y emitida por <a href="">Animax</a> en Latinoamérica, siendo estrenada el 6 de agosto de 2009, con doblaje hecho en Venezuela. Mientras que en España fue emitida por <a href="">Buzz</a> en el 2007.</p>
+      </div>
+  
+    <script>
+        const triggers = document.querySelectorAll('a');
+        const highlight = document.createElement('span');
+        highlight.classList.add('highlight');
+        document.body.appendChild(highlight);
+  
+        function highlightLink() {
+            const linkCoords = this.getBoundingClientRect();
+            console.log(linkCoords);//muestra donde esta el elemento
+            const coords = {
+                    width: linkCoords.width,
+                    height: linkCoords.height,
+                    top: linkCoords.top + window.scrollY, //
+                    left: linkCoords.left + window.scrollX
+            };
+  
+            highlight.style.width = `${coords.width}px`;
+            highlight.style.height = `${coords.height}px`;
+            highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+  
+        }
+  
+        triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
+    </script>
+</body>
+</html>
