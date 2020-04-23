@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capture, Propagation, Bubbling and Once</title>
+</head>
+<body class="bod">
+    
+    <div class="one">
+        <div class="two">
+            <div class="three">
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,*:before, *:after {
+            box-sizing: inherit;
+        }
+
+        div {
+            width: 100%;
+            padding: 100px;
+        }
+
+        .one {
+            background: yellow;
+        }
+
+        .two {
+            background: blue;
+        }
+
+        .three {
+            background: red;
+        }
+    </style>
+
+    <button>Este es</button>
+    
+    <script>
+        const divs = document.querySelectorAll('div');
+        const button = document.querySelector('button');
+
+        function logText(e){
+            console.log(this.classList.value); //muestra donde doy click
+            //console.log(this);
+            e.stopPropagation();//detiene la propagación, el encierro de burbuja para!
+        }
+
+        document.body.addEventListener('click', logText); //podemos empezar un arbol de click en donde esta parado
+
+        divs.forEach(div => div.addEventListener('click', logText, {
+            capture: true, //captura el lugar cuando das click 
+            once: true //quita el envento
+        }));
+
+        // igual que decir once //div.removeEventListener('click', logText, capture ?: Boolean);
+        
+        button.addEventListener('click', () => {
+            console.log('Click!!!!');
+        }, {
+            once: true
+        });
+
+    </script>
+
+</body>
+</html>
