@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+    background: url('https://lh3.googleusercontent.com/proxy/gipCQ98C9t1D-Jbx5woRo6PXGTnYeImcNM9T_5JVjQgykKvSwYZxTpITGydALic9rTzSbJQSKCojD4pUmzx4sAsofNstizncKmzSlgUygREPn6mampL1MKyXULJR3oWxN6xyQ-41QoxVI834A8bpQDDbqLq44GjCGWoHdwKT_6NcBgdC7KQmes4ob2Sh-vyj-LrB5qXbh92XDGzSc7VlpfwDDsvqDMmxBlO0') fixed;
+    background-size: cover;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+.items {
+    height: 800px;
+    padding: 100px;
+    width: 100%;
+    border: 1px solid white;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    font-size: 0;
+    perspective: 500px;
+}
+
+.items.active {
+    background: rgba(255,255,255,0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+
+.item {
+    width: 200px;
+    height: calc(100% - 40px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: 100;
+    color: rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
+}
+
+.item:nth-child(9n+1) { background: url('https://pulpfictioncine.com/download/multimedia.normal.a59a6e98beabfce4.73686f6e656e206a756d705f6e6f726d616c2e6a7067.jpg');
+                        background-size: contain;}
+.item:nth-child(9n+2) { background: url('https://nosomosnonos.com/wp-content/uploads/2019/12/00.jpg');
+                        background-size: contain;}
+.item:nth-child(9n+3) { background: url('https://vignette.wikia.nocookie.net/bokunoheroacademia/images/0/07/Weekly_Shonen_Jump_2019_Issue_4-5.jpg/revision/latest?cb=20190628032941&path-prefix=es');
+                        background-size: contain;}
+.item:nth-child(9n+4) { background: url('https://2.bp.blogspot.com/-XhDue4I0N54/UgJicfLJ0RI/AAAAAAAAAMo/kf1nrxO6D0k/s1600/001-16.jpg');
+                        background-size: contain;}
+.item:nth-child(9n+5) { background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/17ceef29-5c54-4543-acb7-d074f8fcca22/dauujsp-bd4666cd-9073-4ea9-b197-632a2febeb71.jpg/v1/fill/w_1024,h_1536,q_75,strp/weekly_shonen_jump_2016_cover_contest_entry_by_kentaropjj_dauujsp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTUzNiIsInBhdGgiOiJcL2ZcLzE3Y2VlZjI5LTVjNTQtNDU0My1hY2I3LWQwNzRmOGZjY2EyMlwvZGF1dWpzcC1iZDQ2NjZjZC05MDczLTRlYTktYjE5Ny02MzJhMmZlYmViNzEuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.KifsAnQN86InQTL8-Ku2drA8SOG9I0J8IaLekRFLd-E');
+                        background-size: contain;}
+.item:nth-child(9n+6) { background: url('https://3.bp.blogspot.com/-Ndc7wwMUNqc/UAbcp7su8OI/AAAAAAAAA3I/6JZE3ROrlhY/s1600/portada+shonen+jump.jpg');
+                        background-size: contain;}
+.item:nth-child(9n+7) { background: url('https://i.redd.it/7t8c2xk50nd11.jpg');
+                        background-size: contain;}
+.item:nth-child(9n+8) { background: url('https://d3ieicw58ybon5.cloudfront.net/ex/610.824/u/cc3f887ee7b54a2ab5f4356a8a69b89f.jpg');
+                        background-size: contain;}
+.item:nth-child(9n+9) { background-image: url('https://www.comiclist.com/media/blogs/news/SJ100-April11-Cover.jpg');
+                        background-size: contain;}
+
+.item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
+.item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
+  
