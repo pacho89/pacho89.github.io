@@ -1,0 +1,74 @@
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    background: blue;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 10rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.comenzar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.score {
+    background: rgba(255,255,255,0.2);
+    padding: 0 3rem;
+    line-height: 1;
+    border-radius: 1rem;
+}
+
+.game {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.hole {
+    flex: 1 0 33.33%;
+    overflow: hidden;
+    position: relative;
+}
+
+.hole:after {
+    display: block;
+    background: url(https://lh3.googleusercontent.com/proxy/M0g1x_XG7w29yxquWBxbSCXBlwsiwrY5Pg2C1td7LLTXhM0l3VjJqH1KOIcfOg5lYtA8Tj0YjNdAMxR4fzma7XHFkzBwJUqiB7mtXv95VBML4SNvW2-jD3xtWVkNPwcEGgoySkAu140sYn66Ytue-yRDGh_4A_6gGfs) bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 100%;
+    height:70px;
+    position: absolute;
+    z-index: 1;
+    bottom: -20px;
+}
+
+.mole {
+    background: url(https://4.bp.blogspot.com/_-e6TbQx4hh4/SgRJvs4DMTI/AAAAAAAAAA0/duejXNSrLhc/w1200-h630-p-k-no-nu/uribevelenazi.jpg) bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition:all 0.4s;
+}
+
+.hole.up .mole {
+    top: 0;
+}
